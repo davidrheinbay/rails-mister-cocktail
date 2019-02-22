@@ -1,0 +1,53 @@
+.hcard-product {
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.hcard-product img {
+  height: 90%;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+  margin-left: -20px;
+  z-index: 1;
+}
+
+.hcard-content {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hcard-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.hcard-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.hcard-product .hcard-product-infos {
+  padding: 16px;
+
+}
+
+.hcard-infos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%
+}
+

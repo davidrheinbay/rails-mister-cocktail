@@ -1,0 +1,34 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @cocktail.image %>);">
+  <div class="container">
+    <h1><%= @cocktail.name %></h1>
+    <p>Checkout all ingredients</p>
+  </div>
+</div>
+<div class="container">
+
+  <div class="list-group">
+    <% @cocktail.doses.each do |dose| %>
+    <div class="list-group-item card-infos" style="height:100px;">
+        <div class="content">
+          <%= dose.description %> - <%= dose.ingredient.name.capitalize %>
+        </div>
+        <div class="options">
+          <%= link_to cocktail_dose_path(@cocktail, dose), method:"delete" do %>
+          <button class="btn btn-danger btn-sm circle">x</button>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  <h2>Add New Ingredient</h2>
+
+  <%= render 'doses/new', cocktail: @cocktail, dose: @dose %>
+
+
+  <hr>
+
+  <%= link_to "Back to Cocktail Overview", cocktails_path  %>
+</div>
+
+<%=  javascript_pack_tag "select2" %>
+</div>

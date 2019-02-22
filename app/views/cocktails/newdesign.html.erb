@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Some Overview</h1>
+  <div class="hrcard">
+    <% @models.each do |model| %>
+    <div class="hrcard-product">
+      <img src=<%= model.image_url %>>
+      <div class="hrcard-content">
+        <div class="hrcard-product-infos text-capitalize">
+          <h2><%= link_to model_path(model) do  %>
+            <%= model.name %>
+            <% end %>
+            <p><%= model.list_details %>
+            </p>
+          </div>
+          <div class="options">
+            <%= link_to edit_model_path(model) do %>
+            <button class="btn btn-outline-primary">Edit</button>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>

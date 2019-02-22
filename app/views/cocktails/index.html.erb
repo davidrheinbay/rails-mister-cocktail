@@ -1,0 +1,38 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/1185434/pexels-photo-1185434.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);">
+  <div class="container">
+    <h1>David's Cocktail Bar</h1>
+    <p>Checkout all our Cocktails</p>
+  </div>
+</div>
+<div class="container">
+  <h1>Cocktail Overview</h1>
+
+  <% @cocktails.each do |cocktail| %>
+  <div class="card-product">
+    <img src=<%= cocktail.image %>>
+    <div class="card-infos">
+      <div class="card-product-infos text-capitalize">
+        <h2><%= cocktail.name %></h2>
+          <p><%= cocktail.list_doses %>
+          </p>
+        </div>
+      <div class="options">
+        <%= link_to cocktail_path(cocktail) do  %>
+        <button class="btn btn-success">See Ingredients</button>
+        <% end %>
+        <%= link_to edit_cocktail_path(cocktail) do %>
+        <button class="btn btn-primary">Edit</button>
+        <% end %>
+        <%= link_to cocktail_path(cocktail), method:"delete" do  %>
+        <button class="btn btn-danger">Delete</button>
+        <% end %>
+      </div>
+    </div>
+    </div>
+    <% end %>
+    <hr>
+    <h2>Create New Cocktail</h2>
+    <%= render 'shared/cocktail_form' %>
+  </div>
+
+
