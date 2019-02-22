@@ -11,7 +11,7 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.new
   end
 
-  def showhttps://img.chefkoch-cdn.de/ck.de/rezepte/31/31943/940411-420x280-fix-long-island-ice-tea.jpg
+  def show
     @doses = Dose.all
     @dose = Dose.new
   end
@@ -50,5 +50,4 @@ class CocktailsController < ApplicationController
   def set_cocktail
     @cocktail = Cocktail.find(params[:id])
   end
-
 end
