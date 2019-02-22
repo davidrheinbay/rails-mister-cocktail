@@ -4,6 +4,8 @@ class Cocktail < ApplicationRecord
   validates :name, uniqueness: true
   validates :name, presence: true
 
+  mount_uploader :image, ImageUploader
+
   def list_doses
     doses.map { |dose| dose.ingredient.name }.join(', ')
   end
