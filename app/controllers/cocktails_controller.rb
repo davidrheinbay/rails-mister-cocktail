@@ -11,7 +11,7 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.new
   end
 
-  def show
+  def showhttps://img.chefkoch-cdn.de/ck.de/rezepte/31/31943/940411-420x280-fix-long-island-ice-tea.jpg
     @doses = Dose.all
     @dose = Dose.new
   end
@@ -38,6 +38,7 @@ class CocktailsController < ApplicationController
 
   def delete
     @cocktail.delete
+    redirect_to cocktails_path
   end
 
   private
